@@ -1,15 +1,22 @@
-<h1><%= @restaurant.name %></h1>
+<div class="d-flex justify-content-between">
+  <%= link_to 'Back', restaurants_path, :class => "btn btn-secondary"%>
+
+  <h1 class="m-0 pl-5"><%= @restaurant.name %></h1>
+</div>
+
 <br>
+
 <h2><%= @restaurant.address %></h2>
 <br>
 <h3><%= @restaurant.phone_number %></h3>
 
-<%= link_to 'Back', restaurants_path %>
-<br>
-<%= link_to "New review", new_restaurant_review_path(@restaurant) %>
-<br>
-<div class="border">
-<% @restaurant.reviews.each do |review| %>
-<%= review.content %>
-<% end %>
+
+<div class="d-flex justify-content-between mt-5">
+  <h1 class="m-0">Reviews</h1>
+  <%= link_to "New review", new_restaurant_review_path(@restaurant), :class => "btn btn-primary" %>
 </div>
+  <% @restaurant.reviews.each do |review| %>
+    <div class="border m-5">
+      <%= review.content %>
+    </div>
+  <% end %>
