@@ -5,6 +5,11 @@
 <h3><%= @restaurant.phone_number %></h3>
 
 <%= link_to 'Back', restaurants_path %>
-<p><%= @restaurant.reviews %></p>
-
+<br>
 <%= link_to "New review", new_restaurant_review_path(@restaurant) %>
+<br>
+<div class="border">
+<% @restaurant.reviews.each do |review| %>
+<%= review.content %>
+<% end %>
+</div>

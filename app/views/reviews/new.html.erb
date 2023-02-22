@@ -1,6 +1,14 @@
-<h1>New review</h1>
-<%= simple_form_for [@restaurant, @review] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating %>
-  <%= f.submit 'Submit', class: "btn btn-primary"%>
-<% end %>
+<div class="border p-5">
+  <h1>New review</h1>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit 'Submit', class: "btn btn-primary"%>
+  <% end %>
+
+  <div class="mt-5">
+    <%= link_to :back do %>
+      <i data-feather="corner-down-left"></i>
+    <% end %>
+  </div>
+</div>
